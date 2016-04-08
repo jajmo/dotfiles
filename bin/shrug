@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "¯\_(ツ)_/¯" | xclip -selection c
+echo "¯\_(ツ)_/¯ copied to clipboard"

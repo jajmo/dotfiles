@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "( ͡° ͜ʖ ͡° )" | xclip -selection c
+echo "( ͡° ͜ʖ ͡° ) copied to clipboard"
