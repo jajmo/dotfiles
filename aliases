@@ -1,3 +1,4 @@
 alias disp=display
 alias c=clear
 alias m=make
+alias weather="curl wttr.in"
