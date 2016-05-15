@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Automatically update all AUR packages
+# Author: Jason Ajmo
+
+# Note: I'm using cower, so this will be written around that
+
+# The directory to download things to
+AUR_DIR=/home/jajmo/builds/
+
+if [ ! -d $AUR_DIR ]
+then
+    echo "Error:" $AUR_DIR "is not a valid directory"
+    exit 1
+fi
+
+cd $AUR_DIR
+rm -r * 2> /dev/null
+cower -ud
+
+if [ ! "$(ls -A $AUR_DIR)" ]
+then
+	echo "No updates available"
+	exit 0
+fi
+
+for dir in $(ls -1)
+do
+    [[ $dir == "." ]] && continue
+    cd $dir
+    makepkg -sri
+    cd $AUR_DIR
+done
