@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Script to remove unused netctl profiles
+
+if [[ "$#" < 1 ]]; then
+	echo "Usage: `basename $0` [profile] <profile> ..."
+	exit
+fi
+
+for profile in "$@"
+do
+	if [ ! -f "/etc/netctl/$profile" ]; then
+		echo "Profile $profile does not exist"
+		echo "Usage: `basename $0` [profile] <profile> ..."
+		exit
+	fi
+
+	sudo netctl stop "$profile"
+	sudo rm /etc/netctl/"$profile"
+
+	echo "Profile $profile deleted"
+done
