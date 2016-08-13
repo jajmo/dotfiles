@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # Get list of orphaned packages
 orphan_packages=$(pacman -Qdtq)
 
 # If there is at least 1, remove them
-if [ -z $orphan_packages ]; then
+if [[ -z $orphan_packages ]]; then
 	echo "Packages are clean"
 	exit
 else
