@@ -2,6 +2,4 @@ alias disp=display
 alias c=clear
 alias m=make
 alias weather="clear && curl wttr.in"
-
-# Temporary while lxqt-leave is broken
-alias s="sudo lxqt-leave --suspend"
+alias sf="screenfetch"
