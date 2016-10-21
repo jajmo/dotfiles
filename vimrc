@@ -33,6 +33,12 @@ set mouse=a
 " Allow ; to be used instead of :
 nnoremap ; :
 
+" Map keys for pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " No arrow keys!
 map <up> <nop>
 map <down> <nop>
