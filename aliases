@@ -4,3 +4,4 @@ alias m=make
 alias weather="clear && curl wttr.in"
 alias sf="screenfetch"
 alias open="xdg-open"
+alias ns="sudo netctl switch-to"
