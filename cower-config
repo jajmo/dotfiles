@@ -1,0 +1,8 @@
+# Cower configuration
+# Author: Jason Ajmo
+
+# Show colors
+Color = always
+
+# Download dir
+TargetDir = /home/jajmo/builds
