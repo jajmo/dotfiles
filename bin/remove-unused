@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Remove orphaned packages
+# Author: Jason Ajmo
+
 # Get list of orphaned packages
 orphan_packages=$(pacman -Qdtq)
 
