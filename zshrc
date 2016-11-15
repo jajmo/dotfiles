@@ -9,6 +9,7 @@ plugins=(git)
 
 # Default path
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export VISUAL="vim"
 
 # If ~/bin exists, add it to the path
 if [ -d ~/bin ]; then

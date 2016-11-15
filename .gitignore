@@ -1,6 +1,1 @@
-# Secret things
-mount*
-*drive
-
-# Don't commit this
-composer
+*.swp
