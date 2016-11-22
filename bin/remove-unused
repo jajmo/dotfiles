@@ -3,13 +3,21 @@
 # Remove orphaned packages
 # Author: Jason Ajmo
 
-# Get list of orphaned packages
+if [[ $EUID -ne 0 ]]; then
+	echo "This script must be run as root"
+	exit 1
+fi
+
 orphan_packages=$(pacman -Qdtq)
+count=$(($(echo $orphaned_packages | wc -l) - 1))
+date=$(date +%Y-%m-%d\ %H:%M:%S)
+log="/var/log/orphaned.log"
 
 # If there is at least 1, remove them
-if [[ -z $orphan_packages ]]; then
-	echo "Packages are clean"
+if [ $count -eq 0 ]; then
+	echo "[$date] Packages are clean" >> $log
 	exit
 else
-	sudo pacman -Rsn $orphan_packages
+	pacman -Rsn $orphan_packages
+	echo "[$date] Cleaned $count packages" >> $log
 fi
