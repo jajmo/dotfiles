@@ -1,6 +1,2 @@
-alias disp=display
 alias c=clear
-alias m=make
-alias weather="clear && curl wttr.in"
 alias sf="screenfetch"
-alias ns="sudo netctl switch-to"
