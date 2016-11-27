@@ -18,6 +18,6 @@ if [ $count -eq 0 ]; then
 	echo "[$date] Packages are clean" >> $log
 	exit
 else
-	pacman -Rsn $orphan_packages
+	pacman --noconfirm -Rsn $orphan_packages
 	echo "[$date] Cleaned $count packages" >> $log
 fi
