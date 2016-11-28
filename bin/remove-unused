@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Remove orphaned packages
+# Remove orphaned packages. Currently being used as a cron job
 # Author: Jason Ajmo
 
 if [[ $EUID -ne 0 ]]; then
@@ -9,14 +9,18 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 orphan_packages=$(pacman -Qdtq)
-count=$(($(echo $orphaned_packages | wc -l) - 1))
 date=$(date +%Y-%m-%d\ %H:%M:%S)
 log="/var/log/orphaned.log"
+
+if [ "$orphan_packages" == "" ]; then
+	count=0
+else
+	count=`echo "$orphan_packages" | wc -l`
+fi
 
 # If there is at least 1, remove them
 if [ $count -eq 0 ]; then
 	echo "[$date] Packages are clean" >> $log
-	exit
 else
 	pacman --noconfirm -Rsn $orphan_packages
 	echo "[$date] Cleaned $count packages" >> $log

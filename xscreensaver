@@ -34,7 +34,7 @@ grabVideoFrames:    False
 chooseRandomImages: True
 imageDirectory:	/home/jajmo/Pictures/Backgrounds
 
-mode:		one
+mode:		blank
 selected:	81
 
 textMode:	date
