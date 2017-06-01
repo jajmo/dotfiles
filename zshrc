@@ -28,3 +28,5 @@ if [ $(which screenfetch) ]; then
 	screenfetch
 fi
 
+
+export PATH="$HOME/.yarn/bin:$PATH"
