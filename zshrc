@@ -28,5 +28,4 @@ if [ $(which screenfetch) ]; then
 	screenfetch
 fi
 
-
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$PATH"

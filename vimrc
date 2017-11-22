@@ -6,8 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-
+Plugin 'scrooloose/nerdtree' 
 call vundle#end()
 
 filetype plugin indent on
@@ -51,6 +50,11 @@ nnoremap k gk
 
 " NERDTree
 map <C-n> :NERDTree<CR>
+
+if executable('xclip')
+    "copy the given range (or the current line) using xclip
+    command! -range Xclip <line1>,<line2>!tee >(xclip -i -selection clipboard)
+endif
 
 " Forgot to use `sudo` for editing a file that requires root?
 cmap w!! w !sudo tee % >/dev/null
