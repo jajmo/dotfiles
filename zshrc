@@ -29,3 +29,4 @@ if [ $(which screenfetch) ]; then
 fi
 
 export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$PATH"
+export PATH="$PATH:/home/jajmo/.local/bin"
