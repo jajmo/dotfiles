@@ -30,3 +30,7 @@ fi
 
 export PATH="$HOME/.composer/vendor/bin:$HOME/.yarn/bin:$PATH"
 export PATH="$PATH:/home/jajmo/.local/bin"
+
+# vi shell
+bindkey -v
+export KEYTIMEOUT=1
