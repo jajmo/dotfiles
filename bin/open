@@ -3,15 +3,12 @@
 # Open a list of files using xdg-open
 # Author: Jason Ajmo
 
-usage() {
-	echo "Usage: open file1 [file2 file3...]"
-}
-
 if [[ $# -eq 0 ]]; then
-	pcmanfm-qt
+	pcmanfm-qt 2> /dev/null
 fi
 
 for file in "$@";
 do
 	nohup xdg-open "$file" &> /dev/null &
+	sleep 0.5
 done
