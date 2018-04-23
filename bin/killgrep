@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Kill processes from "grep" instead of "killall" 
+# Author: Jason Ajmo
+
+MYPID="$$"
+
+if [[ $# -eq 0 ]]; then
+	echo "Usage: $(basename $0) [process_name] <process_name> ..."
+	exit 0
+fi
+
+for p in "$@";
+do
+	PIDS=$(ps aux | grep "$p" | awk '{ print $2 }')
+	for pid in $PIDS;
+	do
+		if [[ $pid -eq $MYPID ]]; then
+			continue
+		fi
+		kill -9 $pid &> /dev/null
+	done
+done
